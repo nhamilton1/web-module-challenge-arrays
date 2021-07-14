@@ -142,15 +142,13 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array, string){
-  for (let i = 0; i < array.length; i++){
-    if(array[i].includes(string)){
-      if (array.splice(i, i, string)){
-        return array;
-      }
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === string){
+      array.splice(i, 1);
     }
   }
-
-
+  return array;
+} 
 
 
   // for (let i = 0; i < array.length; i++){
@@ -160,7 +158,6 @@ function removeFlavorByName(array, string){
   //     }
   //   }
   // }
-} 
 
 console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
