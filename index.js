@@ -148,8 +148,6 @@ function removeFlavorByName(array, string){
     }
   }
   return array;
-} 
-
 
   // for (let i = 0; i < array.length; i++){
   //   if(array[i].includes(string)){
@@ -158,8 +156,10 @@ function removeFlavorByName(array, string){
   //     }
   //   }
   // }
+} 
 
-console.log(removeFlavorByName(originalFlavors, "Vanilla"));
+
+console.log('task 6',removeFlavorByName(originalFlavors, "Rocky Road"));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -183,16 +183,20 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
-  const newArray = [];
+  // set up the new array that we want to push our results to
+  const filteredArray = [];
+  // loop through the entire array and check each index to see if it includes the string
   for(let i = 0; i < array.length; i++){
     if(array[i].includes(string)){
-      newArray.push(array[i]);
+      // if it does include the string we want to push it to our filtered array
+      filteredArray.push(array[i]);
     }
   }
-  return newArray;
+  //we want our filter results to be returned to us
+  return filteredArray; //make sure this is on the outside of the loop or it wont work!!!!!!
 }
 
-console.log(filterByWord(originalFlavors,'Choclate'));
+console.log('task 7', filterByWord(originalFlavors,'Choclate'));
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
