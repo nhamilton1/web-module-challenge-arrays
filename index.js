@@ -48,7 +48,7 @@ Use the copy function below to do the following:
 function copy(array){
   return [...array];
 }    
-console.log(copy(originalFlavors))
+// console.log(copy(originalFlavors))
 
 
 
@@ -90,7 +90,7 @@ function addFlavor(array, string){
   array.unshift(string)
   return array;
 }
-console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
+// console.log(addFlavor(originalFlavors, "Rainbow Sherbert"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -107,7 +107,7 @@ function removeLastFlavor(array){
   array.pop();
   return array;
 }
-console.log(removeLastFlavor(originalFlavors))
+// console.log(removeLastFlavor(originalFlavors))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -121,11 +121,10 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(array, ){
-  array.indexOf();
-  return array;
+function getFlavorByIndex(array, number){
+  return array[number];
 }
-console.log(getFlavorByIndex(originalFlavors))
+// console.log(getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -145,12 +144,25 @@ Use the removeFlavorByName function below to do the following:
 function removeFlavorByName(array, string){
   for (let i = 0; i < array.length; i++){
     if(array[i].includes(string)){
-      array.splice(1, 1, string)
-      return array;
+      if (array.splice(i, i, string)){
+        return array;
+      }
     }
   }
-}
-console.log(removeFlavorByName(originalFlavors, "Rocky Road"))
+
+
+
+
+  // for (let i = 0; i < array.length; i++){
+  //   if(array[i].includes(string)){
+  //     if (array.splice(i, i, string)){
+  //       return array;
+  //     }
+  //   }
+  // }
+} 
+
+console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
